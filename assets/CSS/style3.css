@@ -1,0 +1,1022 @@
+/* modal */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+.clear{
+    clear: both;
+
+}
+#root {
+    max-width: 1440px;
+    margin: 0 auto;
+  } 
+:root{
+--cerulean:#0089cf;
+--greeny-blue:#3db39e;
+--light-mustard:#feca57;
+--colors-on-background:#000000;
+--slate-grey:#6d6e71;
+--calcite:#ffffff;
+}
+
+@font-face {
+    font-family: 'DroidSansArabic';
+    src: url(./fonts/Droid\ Sans\ Arabic\ Regular.ttf);
+}
+.modal-clock{
+    margin: 0 auto;
+    width: 1440px;
+    position: fixed;
+    
+    top: 208px;
+    right: 0;
+    bottom: 0px;
+    left: 0px;
+    /* padding: 20px; */
+    display: none;
+    animation: modalFadeIn ease 0.3s;
+}
+.modal-clock.open{
+    z-index: 2;
+    display: flex;
+    background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-container{
+    width: 583px;
+  height: 597px;
+  position: absolute;
+  top: -30px;
+  left: 19px;
+  bottom: 0px;
+  z-index: 5 ;
+  
+  padding: 22px 40px 93px 21px;
+  border: solid 0.5px rgba(38, 50, 56, 0.13);
+  background-color: var(--calcite);
+  
+}
+
+.modal-header .header-from{
+    top: 79px;
+    left: 35px;
+    position: absolute;
+    width: 235px;
+    height: 49px; 
+    padding: 14px 66px 13px 24px;
+    opacity: 0.4;
+    border-radius: 6px;
+    border: solid 1px #0089cf;
+    background-color: var(--calcite);
+}
+.clock-enter{
+    width: 149px;
+    height: 31px;
+    position: relative;
+    top: 36px;
+    left: 420px;
+    font-family: 'DroidArabicKufi';
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--colors-on-background);;
+}
+.header-to span ,.header-from span{
+    opacity: 0.9;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0089cf;
+}
+.modal-header .header-to{
+    position: absolute;
+     top: 79px;
+    right: 41px; 
+    width: 235px;
+    height: 49px; 
+    padding: 14px 66px 13px 24px;
+    opacity: 0.4;
+    border-radius: 6px;
+    border: solid 1px #0089cf;
+    background-color: var(--calcite);
+    
+}
+.Line-8 {
+    width: 235px;
+    height: 1px;
+    position: absolute;
+    top: 160px;
+    left: 34px;
+    border: solid 1px #c5c5c5;
+  }
+  .Line-8-Copy {
+    width: 235px;
+    height: 1px;
+    position: absolute;
+    top: 160px;
+    right: 41px;
+    border: solid 1px #c5c5c5;
+  }
+.text-line8{
+    width: 10px;
+    height: 17px;
+    position: absolute;
+    top: 152px;
+    right: 290px;
+    font-family: 'DroidSansArabic';
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--colors-on-background);
+}
+
+.modal-clock .clock-odometer{
+    width: 142px;
+  height: 31px;
+  position: absolute;
+  top: 193px;
+  left: 401px;
+    font-family: 'DroidArabicKufi';
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--colors-on-background);
+}
+
+.clock-distance{
+max-width: 550px;
+max-height: 300px;
+position: absolute;
+top: 236px;
+/* left: 32px; */
+
+}
+
+.distance{
+    border-radius: 6px;
+    border: solid 1px var(--cerulean);
+    background-color: var(--calcite);
+    position: relative;
+    width: 235px;
+    height: 49px;
+    float: left;
+    left: -25px;
+    margin-left: 38px;
+    margin-top: 24px;
+    padding: 12px 42px 16px;
+    font-family: 'DroidSansArabic';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    text-align: center;
+    color: var(--colors-on-background);
+  }
+    
+  .distance.check{
+    background-color: var(--cerulean);
+    color: var(--calcite);
+  }  
+
+
+@keyframes modalFadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+    to {
+        /* opacity: 1; */
+        transform: translateY();
+    }
+    }
+    @keyframes modalFadeIn1 {
+        from{
+            opacity: 0;
+            transform: translateY(540px);
+        }
+        to {
+            /* opacity: 1; */
+            transform: translateY();
+        }
+        }
+
+
+    /* modal year */
+.modal-year{
+    position: fixed;
+    width: 1440px;
+    margin: 0 auto;
+    /* z-index: 2; */
+    top: 208px;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    display: none;
+    animation: modalFadeIn ease 0.3s;
+}
+.modal-year.open{
+    z-index: 3;
+display: flex;
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4);
+
+}
+.modal-year-container{
+position: relative;
+width: 650px;
+height: 457px;
+top: -30px;
+left: 361px;
+bottom: 100px;
+border: solid 0.5px rgba(38, 50, 56, 0.13);
+background-color: var(--calcite);
+z-index: 5 ;
+
+
+}
+.year-enter{
+width: 89px;
+height: 31px;
+position: relative;
+top: 56px;
+left: 555px;
+font-family: 'DroidArabicKufi';
+font-size: 16px;
+font-weight: bold;
+font-stretch: normal;
+font-style: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: right;
+color: var(--colors-on-background);
+}
+.year-from, .year-to{
+width: 235px;
+height: 49px;
+border-radius: 6px;
+border: solid 2px #0089cf;
+background-color: var(--calcite);
+}
+
+.year-from{
+padding: 15px 110px 15px 24px;
+position: relative;
+top: 99px;
+left: 104px;
+}
+.year-to{
+position: relative;
+top: 50px;
+left:379px;
+padding: 15px 110px 15px 24px;
+
+}
+.year-to, .year-from span{
+font-family: 'DroidSansArabic';
+font-size: 16px;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: normal;
+letter-spacing: normal;
+color: var(--colors-on-background);
+}
+
+.line8-year{
+width: 235px;
+height: 1px;
+position: absolute;
+top: 180px;
+left: 104px;
+border: solid 1px #c5c5c5;
+}
+.year-or{
+font-family: 'DroidSansArabic';
+position: absolute;
+top: 180px;
+left: 355px;
+font-size: 12px;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: center;
+color: var(--colors-on-background);
+}
+
+.line8-year1{
+width: 235px;
+height: 1px;
+position: relative;
+top: 64px; 
+ left: 379px;
+border: solid 1px #c5c5c5;
+}
+
+.text-year{
+width: 228px;
+height: 31px;
+position: absolute;
+top: 213px;
+right: 36px;
+font-family: 'DroidSansArabic';
+font-size: 12px;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: right;
+color: rgba(0, 0, 0, 0.5);
+}
+.text-year .text-year-style-1 {
+font-family: 'DroidArabicKufi';
+font-size: 16px;
+font-weight: bold;
+color: var(--colors-on-background);
+}
+.text-year .text-year-style-2 {
+font-family: Helvetica;
+}
+
+.year-list{
+width: 129px;
+height: 57px;
+margin-left: 61px;
+margin-bottom: 29px;
+padding: 18px 46px 20px 44px;
+position: relative;
+top: 144px;
+left: 33px;
+float: left;
+border-radius: 7.4px;
+border: solid 1px #0089cf;
+background-color: var(--calcite);
+}
+.list-year{
+width: 510px;
+height: 145px;
+display: inline;
+
+}
+.year-list span {
+
+font-family: 'DroidSansArabic';
+font-size: 16px;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: normal;
+letter-spacing: 0.75px;
+color: var(--colors-on-background);
+}
+/* modal model */
+.modal-model{
+    position: fixed;
+    width: 1440px;
+    margin: 0 auto;
+    /* z-index: 2; */
+    top: 208px;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    display: none;
+    
+    animation: modalFadeIn ease 0.3s;
+}
+
+.model-container{
+    overflow-y: auto ;
+    overflow-x: hidden ;
+    position: absolute;
+    width: 473px;
+    height: 689px;
+    top: -30px;
+    left: 670px;
+    right: 297px;
+    border: solid 0.5px rgba(38, 50, 56, 0.13);
+    background-color: var(--calcite);
+    z-index: 6 ;
+    
+}
+.modal-model.open{
+    z-index: 3;
+display: flex;
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4);
+
+}
+.model-text{
+    height: 50px;
+    width: 416px;
+    background-color: #c5c5c5;
+    position: relative;
+    top: 25px;
+    left: 27px;
+    right: 30px;
+    /* text-align: right; */
+    padding: 16px 19px 14px 167px;
+    border-radius: 6px;
+    background-color: #f6f9fc;
+    border: none;
+    opacity: 0.4;
+    font-family: 'DroidSansArabic';
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--colors-on-background);
+  }
+#model-shape{
+    
+position: relative;
+top: 24px;
+right: 20px;
+cursor: pointer;
+
+}
+ .model-car-maker span{
+    position: absolute;
+    top: 99px;
+    /* left: 308px; */
+    right: 30px;
+    font-family: 'DroidArabicKufi';
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--colors-on-background);
+}
+
+.model-list-car{
+    
+    position: relative;
+    top: 91px;
+    left: 221px;
+    height: 58px;
+    width: 227px;
+    /* background-color: #feca57; */
+    padding: 10px 12px 13px 23.7px;
+    border-radius: 6px;
+}
+.model-list-car:hover{
+     border: solid 1px var(--cerulean);
+     cursor: pointer;
+     box-sizing: border-box;
+     /* background-color: var(--calcite) !important; */
+}
+
+.model-list-car img{
+    float: right;
+
+}
+
+.model-list-car span{
+   position: absolute;
+   float: right;
+   right: 120px;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 4;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--colors-on-background);
+}
+
+/* modal-price */
+.modal-price{
+    position: fixed;
+    width: 1440px;
+    margin: 0 auto;
+    /* z-index: 2; */
+    top: 208px;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    display: none;
+    
+    animation: modalFadeIn ease 0.3s;
+}
+.modal-price.open{
+    z-index: 3;
+    display: flex;
+    background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+.price-container{
+    overflow-y: auto ;
+    overflow-x: hidden ;
+    position: absolute;
+    width: 623px;
+    height: 627px;
+    top: -30px;
+    left: 799px;
+    right: 18px;
+    border: solid 0.5px rgba(38, 50, 56, 0.13);
+    background-color: var(--calcite);
+    z-index: 5 ;
+
+}
+.enter-price{
+    width: 155px;
+  height: 31px;
+  position: relative;
+  left: 438px;
+  top: 36px;
+  right: 40px;
+  font-family: DroidSansArabic;
+  font-size: 10px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.gird-container-price{
+    position: absolute;
+display: grid;
+grid-template-columns: auto auto;
+top: 79px;
+left: 72px;
+grid-gap: 30px;
+
+
+}
+.gird-enter-price{
+    width: 235px;
+    height: 49px;
+    opacity: 0.4;
+    border-radius: 6px;
+    padding: 14px 81px 13px 77px;
+    text-align: center;
+    opacity: 0.5;
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--cerulean);
+  
+    border: solid 1px var(--cerulean);
+    background-color: var(--calcite);
+}
+.gird-container.price-items{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 24px;
+    padding: 206px 41px 50px 72px;
+}
+.gird-container .price-item{
+width: 235px;
+height: 49px;
+border-radius: 6px;
+padding: 13px 41px 15px;
+border: solid 1px var(--cerulean);
+background-color: var(--calcite);
+/* background-color: lawngreen; */
+text-align: center;
+}
+.price-item span{
+    font-family: 'DroidSansArabic';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    text-align: center;
+    color: var(--colors-on-background);
+}
+.Line-8-Copy-price{
+    position: relative;
+    top: 140px;
+    left: 70px;
+    width: 235px;
+  height: 1px;
+  border: solid 1px #c5c5c5;
+}
+.Line-8-price{
+    position: relative;
+    top: 138px;
+    left: 347px;
+    width: 235px;
+  height: 1px;
+  border: solid 1px #c5c5c5;
+}
+.price-moldel{
+    position: absolute;
+    top: 200px;
+    left: 436px;
+    font-family: 'DroidSansArabic';
+    font-size: 10px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.5);
+}
+ .Pricebold{
+    font-family: 'DroidArabicKufi';
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--colors-on-background);
+}
+
+
+  /* modal-connect */
+  .modal-connect{
+    position: fixed;
+    width: 1440px;
+    margin: 0 auto;
+    /* z-index: 2; */
+    top: 0;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    display: none;
+    animation: modalFadeIn1 ease 0.3s;
+  }
+  .js-modal-connect{
+    cursor: pointer;
+  }
+  .modal-connect.open{
+    z-index: 3;
+    display: flex;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+  }
+
+.modal-connect-container{
+position: relative;
+width: 444px;
+height: 840px;
+top: 10px;
+/* bottom: -100px; */bottom: 10px;
+left: 967px;
+border: solid 0.5px rgba(38, 50, 56, 0.13);
+background-color: var(--calcite);
+z-index: 5 ;
+border-radius: 10px;
+/* margin-bottom: 600px; */
+
+}
+
+
+.con-text{
+    position: absolute;
+    top: 24px;
+    left: 345px;
+    font-family: 'DroidSansArabic';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #000;
+}
+.con-Line{
+    position: relative;
+    top: 40px;
+    width: 443px;
+  height: 1px;
+  /* margin: 0 0 302px; */
+  border: solid 1px #979797;
+}
+.con-text-time{
+    position: absolute;
+    top: 83px;
+    margin: 0 24px;
+    font-family: 'DroidSansArabic';
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.25;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--colors-on-background);
+}
+.con-name{
+    position: relative;
+    top: 137px;
+    left: 343px;
+    font-family: 'DroidArabicKufi';
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: var(--colors-on-background);
+}
+.con-enter-name{
+    position: relative;
+    display: inline-block;
+    top: 155px;
+    width: 396px;
+    height: 56px;
+    left: 24px;
+    padding: 20px 16px 15px 283px;
+    border-radius: 4px;
+    border: solid 1px #c5c5c5;
+    background-color: #f4f4f4;
+}
+.con-phone{
+    position: absolute;
+    top: 280px;
+    right: 24px;
+    font-family: 'DroidArabicKufi';
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: var(--colors-on-background);
+}
+.con-enter-phone{
+    position: absolute;
+    /* display: inline-block; */
+    top: 310px;
+    width: 396px;
+    height: 56px;
+    left: 24px;
+    padding: 20px 16px 15px 283px;
+    border-radius: 4px;
+    border: solid 1px #c5c5c5;
+    background-color: #f4f4f4;
+}
+.con-pur{
+    position: absolute;
+    top: 385px;
+    right: 24px;
+    font-family: 'DroidArabicKufi';
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: var(--colors-on-background);
+}
+.con-enter-pur{
+    position:  absolute;
+    /* display: inline-block; */
+    top: 410px;
+    width: 396px;
+    height: 56px;
+    left: 24px;
+    padding: 20px 16px 15px 283px;
+    border-radius: 4px;
+    border: solid 1px #c5c5c5;
+    background-color: #f4f4f4;
+}
+.con-cont{
+    position: absolute;
+    top: 486px;
+    right: 24px;
+    font-family: 'DroidArabicKufi';
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: var(--colors-on-background);
+}
+.con-enter-cont{
+    position: relative;
+    /* display: inline-block; */
+    top: 421px;
+    width: 396px;
+    height: 222px;
+    left: 24px;
+    padding: 20px 16px 15px 283px;
+    border-radius: 4px;
+    border: solid 1px #c5c5c5;
+    background-color: #f4f4f4;
+    
+}
+
+/* model2 */
+.modal-model2{
+    position: fixed;
+    width: 1440px;
+    margin: 0 auto;
+    /* z-index: 2; */
+    top: 0;
+    right: 297px;
+    bottom: 0px;
+    left: 0;
+    display: none;
+    
+    /* animation: modalFadeIn ease 0.3s; */
+}
+.modal-model2-container{
+    overflow-y: auto ;
+    overflow-x: hidden ;
+    position: absolute;
+    width: 833px;
+    height: 689px;
+    top: 183px;
+    /* left: 310px; */
+    right: 147px;
+    
+    border: solid 0.5px rgba(38, 50, 56, 0.13);
+    background-color: var(--calcite);
+    /* background-color: #0089cf; */
+    z-index: 6 ;
+}
+
+
+
+.modal-model2.open{
+    z-index: 6;
+display: flex;
+
+
+}
+.model2-text{
+    height: 50px;
+    width: 771px;
+    background-color: #c5c5c5;
+    position: relative;
+    top: 25px;
+    left: 27px;
+    right: 30px;
+    /* text-align: right; */
+    padding: 16px 19px 14px 167px;
+    border-radius: 6px;
+    background-color: #f6f9fc;
+    border: none;
+    opacity: 0.4;
+    font-family: 'DroidSansArabic';
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--colors-on-background);
+  }
+#model2-shape{
+    
+position: relative;
+top: 24px;
+right: 20px;
+cursor: pointer;
+
+}
+ .model-car-maker2 span{
+    position: absolute;
+    top: 99px;
+    /* left: 308px; */
+    right: 30px;
+    font-family: 'DroidArabicKufi';
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--colors-on-background);
+}
+
+.model-list-car2{
+    
+    position: relative;
+    top: 91px;
+    /* left: 221px; */
+    left: 588px;
+    height: 58px;
+    width: 227px;
+    /* background-color: #feca57; */
+    padding: 10px 12px 13px 23.7px;
+    border-radius: 6px;
+}
+.model-list-car2:hover{
+     border: solid 1px var(--cerulean);
+     cursor: pointer;
+     box-sizing: border-box;
+     /* background-color: var(--calcite) !important; */
+}
+
+.model-list-car2 img{
+    float: right;
+
+}
+
+.model-list-car2 span{
+   position: absolute;
+   float: right;
+   right: 120px;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 4;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--colors-on-background);
+}
+.line-model{
+    width: 1px;
+    height: 90%;
+    border: solid 1px #979797;
+    position: absolute;
+    top: 104px;
+    left: 586px;  
+}
+.model-huyndai-img{
+    width: 93px;
+    height: 44px;
+    position: absolute;
+    /* bottom: 544px; */
+    top: 101px;
+    left: 32px;
+}
+.moddel2-text{
+    position: absolute;
+    bottom: 559px;
+    left: 389px;
+    font-family: 'DroidArabicKufi';
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--colors-on-background);
+}
+.model2-car-items{
+    position: relative;
+    float: left;
+    margin-left: 88px;
+    left: -31px;
+    bottom: 459px;
+    width: 112px;
+    height: 139px;
+    display: flex;
+   
+}
+.Grandi10-Santa-Fe-Xc {
+    width: 74px;
+    padding: 0 30;
+    /* height: 139px; */
+    margin: 0 2px 1px 0;
+    font-family: 'DroidSansArabic';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.13;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--colors-on-background);
+    
+  }
+  .Grandi10-Santa-Fe-Xc a:hover{
+    border-radius: 6px;
+    border: solid 1px var(--cerulean);
+  }
+.js-model2-list{
+    cursor: pointer;
+}
+/* .js-model2-list:hover{
+    background-color: #feca57;
+} */
